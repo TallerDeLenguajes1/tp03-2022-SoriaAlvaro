@@ -5,6 +5,10 @@
 int main (){
     /* char *nombres=(char *) malloc(5 * sizeof(char));  -> reseva 5 caracteres */
     /* char *nombres=(char *) malloc((strlen(aux)+1) * sizeof(char)); -> reserva la cantidad de caracteres que se ingresen en aux */
+
+    /* ejemplo
+    char **v
+    v=(char**)malloc(n * sizeof(char*)) */
     char *nombre[5];
     char *aux;
     int i,j;
@@ -21,8 +25,10 @@ int main (){
         printf("\n\nNombre.....\n");
         puts(nombre[j]);
     }
-
-    free(nombre);
+    for(j=0;j<5;j++){
+        free(nombre[j]);
+    }
+    
 
     return 0;
 }
